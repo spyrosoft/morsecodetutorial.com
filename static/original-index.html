@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>Morse Code Tutorial</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="css/foundation.min.css" rel="stylesheet" />
+	<link href="css/app.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="row columns text-center">
+		<div class="interface-content" id="interface-content">
+			<div class="options-content">
+				<input type="button" id="options-button" value="Options" onclick="show_options();" />
+				<div id="options">
+					<div class="options">
+						<h3>Mode</h3>
+						<div class="option">
+							<input type="radio" name="tutorial-or-practice" onclick="current_problem();" id="option-tutorial" checked="checked" />
+							<label for="option-tutorial">Tutorial</label>
+						</div>
+						<div class="option">
+							<input type="radio" name="tutorial-or-practice" onclick="current_problem();" id="option-practice" />
+							<label for="option-practice">Practice</label>
+						</div>
+					</div>
+					<div class="options">
+						<h3>Practice Problems</h3>
+						<div class="option">
+							<input type="checkbox" id="option-alphabet" onclick="next_problem();" checked="checked" />
+							<label for="option-alphabet">Alphabet</label>
+						</div>
+						<div class="option">
+							<input type="checkbox" id="option-numbers" onclick="next_problem();" />
+							<label for="option-numbers">Numbers</label>
+						</div>
+						<div class="option">
+							<input type="checkbox" id="option-punctuation" onclick="next_problem();" />
+							<label for="option-punctuation">Punctuation</label>
+						</div>
+						<div class="option">
+							<input type="checkbox" id="option-miscellaneous" onclick="next_problem();" />
+							<label for="option-miscellaneous">Miscellaneous</label>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="options">
+						<h3>General</h3>
+						<div class="option">
+							<input type="checkbox" id="option-visual" checked="checked" />
+							<label for="option-visual">Visual</label>
+						</div>
+						<div class="option">
+							<input type="checkbox" id="option-audio" checked="checked" />
+							<label for="option-audio">Audio</label>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<p></p>
+			<div class="input-output-content">
+				<div class="visual-output centered" id="visual-output"></div>
+				<input type="text" class="prompt" id="output-prompt" value="" size="7" readonly="readonly" />
+				<div class="input">
+					<input type="text" id="user-input" maxlength="1" size="2" onkeydown="check_input_down(event);" onkeyup="check_input_up(event);" />
+				</div>
+				<div class="morse-code-output" id="output">&nbsp;</div>
+				<div id="comment-output">&nbsp;</div>
+			</div>
+			<div class="instructions">
+				<p>&bull; : Tap enter&nbsp;</p>
+				<p>&ndash; : Hold enter</p>
+				<p>Reveal the answer : shift + enter</p>
+			</div>
+			<div id="sound-output-tone-player">
+				<audio id="sound-output-tone">
+					<source src="audio/tone.ogg" />
+					<source src="audio/tone.mp3" />
+				</audio>
+			</div>
+		</div>
+	</div>
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/what-input.min.js"></script>
+	<script src="js/foundation.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
