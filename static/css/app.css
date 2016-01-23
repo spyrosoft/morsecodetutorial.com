@@ -1,24 +1,24 @@
 /* Colors */
 body {
-  background-color: #000000; }
+  background-color: #ffffff; }
 
 body, h1, h2, h3, h4, h5, h6 {
-  color: #ffffff; }
+  color: #000000; }
 
 .button {
+  background-color: #000000;
+  color: #ffffff; }
+
+.button:hover, .button:focus {
   background-color: #ffffff;
   color: #000000; }
 
-.button:hover, .button:focus {
-  background-color: #000000;
-  color: #ffffff; }
-
 [type=text], [type=password], [type=date], [type=datetime], [type=datetime-local], [type=month], [type=week], [type=email], [type=number], [type=search], [type=tel], [type=time], [type=url], [type=color], textarea {
-  background-color: #000000;
-  color: #ffffff; }
+  background-color: #ffffff;
+  color: #000000; }
 
 [type=text]:focus, [type=password]:focus, [type=date]:focus, [type=datetime]:focus, [type=datetime-local]:focus, [type=month]:focus, [type=week]:focus, [type=email]:focus, [type=number]:focus, [type=search]:focus, [type=tel]:focus, [type=time]:focus, [type=url]:focus, [type=color]:focus, textarea {
-  color: #000000; }
+  color: #ffffff; }
 
 /* Spacing */
 h1, h2, h3, h4, h5, h6 {
