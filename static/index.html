@@ -9,13 +9,57 @@
 	<link href="css/app.css" rel="stylesheet" />
 </head>
 <body>
-	
-	<div class="row columns text-center">
-		<audio class="sound-output-tone">
-			<source src="audio/tone.ogg" />
-			<source src="audio/tone.mp3" />
-		</audio>
+
+	<div class="off-canvas-wrapper">
+    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+			
+      <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+				<p>
+					<strong>Options</strong>
+				</p>
+				<div class="switch-wrap clearfix">
+					<div class="switch">
+						<input class="switch-input" id="visual-output" type="checkbox" name="visual-output">
+						<label class="switch-paddle" for="visual-output">
+							<span class="show-for-sr">Visual Output</span>
+							<span class="switch-active" aria-hidden="true">On</span>
+							<span class="switch-inactive" aria-hidden="true">Off</span>
+						</label>
+					</div>
+					<label for="visual-output">Visual</label>
+				</div>
+				<div class="switch-wrap clearfix">
+					<div class="switch">
+						<input class="switch-input" id="audio-output" type="checkbox" name="audio-output">
+						<label class="switch-paddle" for="audio-output">
+							<span class="show-for-sr">Audio Output</span>
+							<span class="switch-active" aria-hidden="true">On</span>
+							<span class="switch-inactive" aria-hidden="true">Off</span>
+						</label>
+					</div>
+					<label for="audio-output">Audio</label>
+				</div>
+				<hr>
+			</div>
+			
+      <div class="off-canvas-content" data-off-canvas-content>
+				
+				<button type="button" class="menu-icon" data-toggle="offCanvas"></button>
+				
+				<div class="row columns text-center">
+					<h1 id="prompt"></h1>
+					<button class="button large beep">Beep</button>
+				</div>
+				
+			</div>
+			
+    </div>
 	</div>
+	
+	<audio id="beep-boop">
+		<source src="audio/tone.ogg" />
+		<source src="audio/tone.mp3" />
+	</audio>
 	
 	<script src="js/jquery.min.js"></script>
 	<script src="js/what-input.min.js"></script>

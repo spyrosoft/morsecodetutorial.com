@@ -7,11 +7,16 @@ body, h1, h2, h3, h4, h5, h6 {
 
 .button {
   background-color: #000000;
-  color: #ffffff; }
+  color: #ffffff;
+  border: 0.2rem solid #000000; }
 
 .button:hover, .button:focus {
   background-color: #ffffff;
   color: #000000; }
+
+.menu-icon::after, .menu-icon:hover::after {
+  box-shadow: 0 7px 0 #000000, 0 14px #000000;
+  background-color: #000000; }
 
 [type=text], [type=password], [type=date], [type=datetime], [type=datetime-local], [type=month], [type=week], [type=email], [type=number], [type=search], [type=tel], [type=time], [type=url], [type=color], textarea {
   background-color: #ffffff;
@@ -19,6 +24,23 @@ body, h1, h2, h3, h4, h5, h6 {
 
 [type=text]:focus, [type=password]:focus, [type=date]:focus, [type=datetime]:focus, [type=datetime-local]:focus, [type=month]:focus, [type=week]:focus, [type=email]:focus, [type=number]:focus, [type=search]:focus, [type=tel]:focus, [type=time]:focus, [type=url]:focus, [type=color]:focus, textarea {
   color: #ffffff; }
+
+.off-canvas {
+  padding: 1rem;
+  background-color: #000000;
+  color: #ffffff; }
+
+.off-canvas .switch-paddle, input:checked ~ .switch-paddle {
+  background-color: #ffffff; }
+
+.off-canvas .switch-paddle::after {
+  background-color: #000000; }
+
+.off-canvas label {
+  color: #ffffff; }
+
+.off-canvas-content {
+  box-shadow: none; }
 
 /* Spacing */
 h1, h2, h3, h4, h5, h6 {
@@ -31,5 +53,30 @@ h1, h2, h3, h4, h5, h6 {
 ul, ol {
   margin-left: 2rem;
   margin-top: 0; }
+
+.menu-icon {
+  margin: 0.5rem; }
+
+.switch {
+  margin-bottom: 0; }
+
+.switch-wrap {
+  margin-bottom: 1rem;
+  clear: both; }
+
+.switch-wrap label {
+  line-height: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem; }
+
+.off-canvas-content {
+  padding-bottom: 10rem; }
+
+/* General */
+.switch-wrap .switch, .switch-wrap label {
+  float: left; }
+
+.switch-wrap label {
+  cursor: pointer; }
 
 /*# sourceMappingURL=app.css.map */
