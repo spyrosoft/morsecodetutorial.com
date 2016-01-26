@@ -82,4 +82,7 @@ ul, ol {
 .switch-wrap label {
   cursor: pointer; }
 
+.display-none {
+  display: none; }
+
 /*# sourceMappingURL=app.css.map */
