@@ -75,6 +75,9 @@ ul, ol {
 .off-canvas-content {
   padding-bottom: 10rem; }
 
+.section-title {
+  padding-top: 0; }
+
 /* General */
 .switch-wrap .switch, .switch-wrap label {
   float: left; }

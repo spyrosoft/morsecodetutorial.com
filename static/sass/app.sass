@@ -1,7 +1,7 @@
-$fg-color-dark: #000000
-$fg-color-light: #606060
-$bg-color-dark: #d0d0d0
-$bg-color-light: #ffffff
+$fg-color-primary: #000000
+$fg-color-secondary: #606060
+$bg-color-primary: #ffffff
+$bg-color-secondary: #d0d0d0
 
 $tiny-spacing: 0.2rem
 $small-spacing: 1rem
@@ -13,47 +13,47 @@ $huge-spacing: 10rem
 /* Colors
 
 body
-	background-color: $bg-color-light
+	background-color: $bg-color-primary
 
 body, h1, h2, h3, h4, h5, h6
-	color: $fg-color-dark
+	color: $fg-color-primary
 
 .button
-	background-color: $fg-color-dark
-	color: $bg-color-light
-	border: $tiny-spacing solid $fg-color-dark
+	background-color: $fg-color-primary
+	color: $bg-color-primary
+	border: $tiny-spacing solid $fg-color-primary
 
 .button:hover, .button:focus
-	background-color: $bg-color-light
-	color: $fg-color-dark
+	background-color: $bg-color-primary
+	color: $fg-color-primary
 
 .menu-icon::after, .menu-icon:hover::after
-	box-shadow: 0 7px 0 $fg-color-dark, 0 14px $fg-color-dark
-	background-color: $fg-color-dark
+	box-shadow: 0 7px 0 $fg-color-primary, 0 14px $fg-color-primary
+	background-color: $fg-color-primary
 
 [type=text], [type=password], [type=date], [type=datetime], [type=datetime-local], [type=month], [type=week], [type=email], [type=number], [type=search], [type=tel], [type=time], [type=url], [type=color], textarea
-	background-color: $bg-color-light
-	color: $fg-color-dark
+	background-color: $bg-color-primary
+	color: $fg-color-primary
 
 [type=text]:focus, [type=password]:focus, [type=date]:focus, [type=datetime]:focus, [type=datetime-local]:focus, [type=month]:focus, [type=week]:focus, [type=email]:focus, [type=number]:focus, [type=search]:focus, [type=tel]:focus, [type=time]:focus, [type=url]:focus, [type=color]:focus, textarea
-	color: $bg-color-light
+	color: $bg-color-primary
 
 .off-canvas
 	padding: $small-spacing
-	background-color: $fg-color-dark
-	color: $bg-color-light
+	background-color: $fg-color-primary
+	color: $bg-color-primary
 
 .off-canvas .switch-paddle, input:checked~.switch-paddle
-	background-color: $bg-color-light
+	background-color: $bg-color-primary
 
 .off-canvas .switch-paddle::after
-	background-color: $fg-color-dark
+	background-color: $fg-color-primary
 
 .off-canvas label
-	color: $bg-color-light
+	color: $bg-color-primary
 
 .off-canvas label.switch-paddle
-	color: $fg-color-dark
+	color: $fg-color-primary
 
 .off-canvas-content
 	box-shadow: none
@@ -89,6 +89,9 @@ ul, ol
 
 .off-canvas-content
 	padding-bottom: $huge-spacing
+
+.section-title
+	padding-top: 0
 
 
 /* General
