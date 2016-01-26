@@ -100,7 +100,15 @@ var morse = new Tutorial();
 
 // --------------------Tutorial Content--------------------
 
-var morseSection = morse.getCurrentSection();
+var morseSection = morse.currentSection();
+
+function displaySection() {
+	$( '.section-title' ).html( morseSection.title() );
+}
+
+displaySection();
+
+
 
 function loadSection( section ) {
 	$( '.section-title' ).html( section.title() );
@@ -113,7 +121,7 @@ $( 'input.answer' ).on( 'keydown', checkAnswer );
 function checkAnswer() {
 	var currentAnswer = $( '.answer' ).val();
 	if ( currentAnswer === '' ) { return; }
-	var correctAnswer = morseSection.getCurrentProblem().answer();
+	var correctAnswer = morseSection.currentProblem().answer();
 	if ( morseSection.checkAnswer( currentAnswer ) ) {
 		answerIsCorrect();
 	} else {
@@ -123,11 +131,10 @@ function checkAnswer() {
 
 function answerIsCorrect() {
 	message( nextWordOfEncouragement() );
-	loadCurrentProblem();
 }
 
 function answerIsIncorrect() {
-	var explanation = morseSection.getCurrentProblem().explanation();
+	var explanation = morseSection.currentProblem().explanation();
 	if ( explanation ) { message( explanation ); }
 	else { message( 'Try again.' ); }
 }
@@ -147,7 +154,7 @@ function nextWordOfEncouragement() {
 
 
 function message( message ) {
-	$( '#prompt' ).html( message );
+	$( '.message' ).html( message );
 }
 
 function clearMessage() {
