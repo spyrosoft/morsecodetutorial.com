@@ -54,7 +54,8 @@ var morse = new Tutorial();
 	var sectionsData = [
 		{
 			'id' : 'alphabet',
-			'title' : 'A Through Z'
+			'title' : 'A Through Z',
+			'intro' : 'Letters were encoded with the intention of making the most common letters the fewest dots and dashes.'
 		},
 		{
 			'id' : 'numbers',
@@ -104,11 +105,21 @@ var morseSection = morse.currentSection();
 
 function displaySection() {
 	$( '.section-title' ).html( morseSection.title() );
+	message( morseSection.intro() );
 }
 
 displaySection();
 
+function loadCurrentProblem() {
+	var currentProblem = morseSection.currentProblem();
+	if ( currentProblem === null ) {
+		console.log('No current problem loaded.')
+	} else {
+		$( '.prompt' ).html( currentProblem.prompt() );
+	}
+}
 
+loadCurrentProblem();
 
 function loadSection( section ) {
 	$( '.section-title' ).html( section.title() );
