@@ -10,3 +10,4 @@
 
 
 * Reaching for the Stars
+** In addition to just characters, also generate random sentences both in English and in Morse Code to translate from
