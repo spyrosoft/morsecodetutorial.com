@@ -1,5 +1,3 @@
-$(document).foundation();
-
 var secondsOfToneAudio = 30;
 
 $( '.beep.button' ).on( 'mousedown', startBeepBoop );
