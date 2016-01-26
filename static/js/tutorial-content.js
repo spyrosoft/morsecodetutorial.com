@@ -1,3 +1,4 @@
+// --------------------Populate the Tutorial--------------------
 var data = {
 	
 	'alphabet-morse' : [
@@ -91,3 +92,64 @@ var morse = new Tutorial();
 		}
 	}
 })();
+
+
+
+
+
+
+// --------------------Tutorial Content--------------------
+
+var morseSection = morse.getCurrentSection();
+
+function loadSection( section ) {
+	$( '.section-title' ).html( section.title() );
+	message( section.intro() );
+}
+
+$( 'input.answer' ).on( 'keydown', clearMessage );
+$( 'input.answer' ).on( 'keydown', checkAnswer );
+
+function checkAnswer() {
+	var currentAnswer = $( '.answer' ).val();
+	if ( currentAnswer === '' ) { return; }
+	var correctAnswer = morseSection.getCurrentProblem().answer();
+	if ( morseSection.checkAnswer( currentAnswer ) ) {
+		answerIsCorrect();
+	} else {
+		answerIsIncorrect();
+	}
+}
+
+function answerIsCorrect() {
+	message( nextWordOfEncouragement() );
+	loadCurrentProblem();
+}
+
+function answerIsIncorrect() {
+	var explanation = morseSection.getCurrentProblem().explanation();
+	if ( explanation ) { message( explanation ); }
+	else { message( 'Try again.' ); }
+}
+
+// Release some endorphins for the user when they answer problems correctly:
+var wordsOfEncouragement = ['Excellent', 'Correct', 'Superb', 'Fantastic', 'Marvelous', 'Admirable', 'Ace', 'First-class', 'Dandy', 'Exquisite', 'Fantastic', 'Golden', 'Marvellous', 'Outstanding', 'Splendid', 'Magnificent', 'Smashing', 'Terrific', 'Topnotch', 'Tremendous', 'Wonderful', 'Champion', 'First-rate', 'Brilliant', 'Fabulous', 'Stunning', 'Commendable', 'Huzzah'];
+var wordsOfEncouragementIndex = 0;
+
+function nextWordOfEncouragement() {
+	if ( wordsOfEncouragementIndex === wordsOfEncouragement.length ) {
+		wordsOfEncouragementIndex = 0;
+	}
+	var wordOfEncouragement = wordsOfEncouragement[ wordsOfEncouragementIndex ];
+	wordsOfEncouragementIndex++;
+	return wordOfEncouragement;
+}
+
+
+function message( message ) {
+	$( '#prompt' ).html( message );
+}
+
+function clearMessage() {
+	message( '&nbsp;' );
+}
