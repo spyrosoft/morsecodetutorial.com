@@ -39,6 +39,9 @@ body, h1, h2, h3, h4, h5, h6 {
 .off-canvas label {
   color: #ffffff; }
 
+.off-canvas label.switch-paddle {
+  color: #000000; }
+
 .off-canvas-content {
   box-shadow: none; }
 
