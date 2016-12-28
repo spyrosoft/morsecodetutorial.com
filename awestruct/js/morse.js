@@ -55,12 +55,12 @@ var morse = new Tutorial();
 		{
 			'id' : 'alphabet',
 			'title' : 'A Through Z',
-			'intro' : 'Letters were encoded with the intention of making the most common letters the fewest dots and dashes.'
+			'intro' : 'Let\'s learn some letters!\n\nThe most common letters have the fewest dots and dashes.'
 		},
 		{
 			'id' : 'numbers',
 			'title' : '0 Through 9',
-			'intro' : 'Note the pattern. All numbers are five characters, beginning with all dashes. Dashes are substituted for dots one at a time from left to right. Then again dots are replaced with dashes from left to right.\n\n1 0 ----- 1 .---- 2 ..--- 3 ...-- 4 ....- 5 ..... 6 -.... 7 --... 8 ---.. 9 ----.'
+			'intro' : 'There is an easy to remember pattern. All numbers are five long. Dashes are swapped with dots one at a time from left to right. Then when dashes run out, dots are replaced with dashes from left to right. Take a look:\n\n1 0 ----- 1 .---- 2 ..--- 3 ...-- 4 ....- 5 ..... 6 -.... 7 --... 8 ---.. 9 ----.'
 		},
 		{
 			'id' : 'punctuation',
@@ -165,6 +165,7 @@ function nextWordOfEncouragement() {
 
 
 function message( message ) {
+	message = message.replace(/\n/g, '<br>');
 	$( '.message' ).html( message );
 }
 

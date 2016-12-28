@@ -1,0 +1,43 @@
+---
+title: Hands On Morse Code Tutorial
+layout: general
+script: /js/beep-boop.js
+script2: /js/morse.js
+---
+.off-canvas-wrapper
+  .off-canvas-wrapper-inner{'data-off-canvas-wrapper' => ''}
+    #left-nav.off-canvas.position-left{'data-off-canvas' => ''}
+      %p
+        %strong Options
+      .switch-wrap.clearfix
+        .switch
+          %input#visual-output.switch-input{:name => 'visual-output', :type => 'checkbox'}
+          %label.switch-paddle{:for => 'visual-output'}
+            %span.show-for-sr Visual Output
+            %span.switch-active{'aria-hidden' => 'true'} On
+            %span.switch-inactive{'aria-hidden' => 'true'} Off
+        %label{:for => 'visual-output'} Visual
+      .switch-wrap.clearfix
+        .switch
+          %input#audio-output.switch-input{:name => 'audio-output', :type => 'checkbox'}
+          %label.switch-paddle{:for => 'audio-output'}
+            %span.show-for-sr Audio Output
+            %span.switch-active{'aria-hidden' => 'true'} On
+            %span.switch-inactive{'aria-hidden' => 'true'} Off
+        %label{:for => 'audio-output'} Audio
+    .off-canvas-content{'data-off-canvas-content' => ''}
+      %button.menu-icon{'data-toggle' => 'left-nav', :type => 'button'}
+      .row.columns.text-center
+        %h2.section-title
+        %h1.prompt
+        .text-input.display-none
+          %input.answer{:type => 'text'}
+        .beep-input.display-none
+          %button.button.large.beep Beep
+        %p.message
+%audio#beep-boop-1{:loop => ''}
+  %source{:src => '/audio/tone.ogg'}
+  %source{:src => '/audio/tone.mp3'}
+%audio#beep-boop-2{:loop => ''}
+  %source{:src => '/audio/tone.ogg'}
+  %source{:src => '/audio/tone.mp3'}

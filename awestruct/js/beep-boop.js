@@ -2,6 +2,7 @@ var secondsOfToneAudio = 30;
 
 $( '.beep.button' ).on( 'mousedown', startBeepBoop );
 $( window ).on( 'mouseup', stopBeepBoop );
+$( window ).on( 'mouseleave', stopBeepBoop );
 $( window ).on( 'keydown', checkForCtrlKeydown );
 $( window ).on( 'keyup', checkForCtrlKeyup );
 

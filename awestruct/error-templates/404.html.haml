@@ -1,0 +1,13 @@
+---
+title: 404 Page Not Found
+layout: general
+---
+.row.columns
+  .text-content
+    %h1 #{page.title}
+    .italics
+      %p This page does not exist.
+      %p
+        Please visit the
+        = succeed "." do
+          %a{:href => "/"} homepage
