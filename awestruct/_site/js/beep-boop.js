@@ -9,6 +9,10 @@ $( window ).on( 'keyup', checkForCtrlKeyup );
 var beepBoop;
 var alternateBeepBoop;
 var beepBoopTimeinterval;
+var currentlyBeeping = false;
+var boopTimeout;
+
+var currentInput = '';
 
 initializeBeepBoop();
 
@@ -30,10 +34,17 @@ function initializeBeepBoop() {
 }
 
 function startBeepBoop() {
+	if ( currentlyBeeping ) { return; }
+	currentlyBeeping = true;
 	beepBoop.volume = 1;
+	appendDotToMorseOutput();
+	updateMorseOutput();
+	boopTimeout = setTimeout( appendDashIfEnoughTimeLapsed, 150 );
+	clearMessage();
 }
 
 function stopBeepBoop() {
+	currentlyBeeping = false;
 	beepBoop.volume = 0;
 }
 
@@ -65,4 +76,30 @@ function checkForCtrlKeyup( keyEvent ) {
 	if ( Utilities.keyCodeLookup( keyEvent ) === 'control' ) {
 		stopBeepBoop();
 	}
+}
+
+function appendDotToMorseOutput() {
+	currentInput += '.';
+}
+
+function appendDashIfEnoughTimeLapsed() {
+	if ( beepBoop.volume === 1 ) {
+		deleteLastInputCharacter();
+		appendDashToCurrentInput();
+		updateMorseOutput();
+	}
+}
+
+function deleteLastInputCharacter() {
+	if ( currentInput.length > 0 ) {
+		currentInput = currentInput.substring( 0, currentInput.length - 1 );
+	}
+}
+
+function appendDashToCurrentInput() {
+	currentInput += '-';
+}
+
+function updateMorseOutput() {
+	$( '.morse-output' ).html( currentInput );
 }

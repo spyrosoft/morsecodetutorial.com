@@ -106,6 +106,7 @@ var morseSection = morse.currentSection();
 function displaySection() {
 	$( '.section-title' ).html( morseSection.title() );
 	message( morseSection.intro() );
+	$( '.beep-input' ).show();
 }
 
 displaySection();
@@ -113,6 +114,7 @@ displaySection();
 function loadCurrentProblem() {
 	var currentProblem = morseSection.currentProblem();
 	if ( currentProblem === null ) {
+		//TODO:
 		console.log('No current problem loaded.')
 	} else {
 		$( '.prompt' ).html( currentProblem.prompt() );
@@ -130,10 +132,9 @@ $( 'input.answer' ).on( 'keydown', clearMessage );
 $( 'input.answer' ).on( 'keydown', checkAnswer );
 
 function checkAnswer() {
-	var currentAnswer = $( '.answer' ).val();
-	if ( currentAnswer === '' ) { return; }
+	if ( currentInput === '' ) { return; }
 	var correctAnswer = morseSection.currentProblem().answer();
-	if ( morseSection.checkAnswer( currentAnswer ) ) {
+	if ( morseSection.checkAnswer( currentInput ) ) {
 		answerIsCorrect();
 	} else {
 		answerIsIncorrect();
