@@ -101,18 +101,26 @@ ul, ol {
   padding-top: 0; }
 
 /* line 96, /home/path/sites/morsecodetutorial.com/awestruct/css/app.sass */
+.medium-margin-top {
+  margin-top: 2rem; }
+
+/* line 99, /home/path/sites/morsecodetutorial.com/awestruct/css/app.sass */
 .message {
   font-size: large; }
 
 /* General */
-/* line 102, /home/path/sites/morsecodetutorial.com/awestruct/css/app.sass */
+/* line 105, /home/path/sites/morsecodetutorial.com/awestruct/css/app.sass */
 .switch-wrap .switch, .switch-wrap label {
   float: left; }
 
-/* line 105, /home/path/sites/morsecodetutorial.com/awestruct/css/app.sass */
+/* line 108, /home/path/sites/morsecodetutorial.com/awestruct/css/app.sass */
 .switch-wrap label {
   cursor: pointer; }
 
-/* line 108, /home/path/sites/morsecodetutorial.com/awestruct/css/app.sass */
+/* line 111, /home/path/sites/morsecodetutorial.com/awestruct/css/app.sass */
 .display-none {
   display: none; }
+
+/* line 114, /home/path/sites/morsecodetutorial.com/awestruct/css/app.sass */
+.button, .button:focus {
+  outline: none; }
